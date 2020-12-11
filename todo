@@ -1,0 +1,9 @@
+Objective:
+    ☐ Create an autocomplete input
+    ☐ That uses the Bulma template
+    ☐ That makes an HTTP request to a mockup json
+    ☐ Queries the user input to that HTTP input
+    ☐ Have a loading state
+    ☐ Have a empty list state
+    ☐ Loads up the list from the query
+    ☐ With a debounce of 500ms
