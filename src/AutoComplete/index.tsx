@@ -1,7 +1,7 @@
-import { FC } from 'react';
+import { FC } from "react";
 
 const AutoComplete: FC = () => {
+  return <div></div>;
+};
 
-}
-
-export default AutoComplete
+export default AutoComplete;
