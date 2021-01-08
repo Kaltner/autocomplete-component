@@ -6,6 +6,7 @@ interface City {
 
 const AutoComplete: FC = () => {
   const [cities, setCities] = useState([]);
+  const [selectedCity, setSelectedCity] = useState("");
 
   const mockCities: City[] = [
     { name: "Vancouver" },
@@ -21,8 +22,9 @@ const AutoComplete: FC = () => {
   const debounce = useDebouncedCallback((value) => handleDebounce(value), 500);
 
   const fetchCities = (query: string): City[] => {
-    // TODO: Turn this into case insensitive
-    return mockCities.filter((v) => v.name.includes(query));
+    return mockCities.filter((v) =>
+      v.name.toLowerCase().includes(query.toLowerCase())
+    );
   };
 
   const handleDebounce = (q: string) => {
@@ -36,13 +38,21 @@ const AutoComplete: FC = () => {
     return (
       <div className="dropdown-menu" id="dropdown-menu" role="menu">
         <div className="dropdown-content">
-          {cities.map((city: City) => {
-            return (
-              <a href="#" className="dropdown-item">
-                {city.name}
-              </a>
-            );
-          })}
+          {cities.length > 0 ? (
+            cities.map((city: City) => {
+              return (
+                <a
+                  href="#"
+                  className="dropdown-item"
+                  onClick={() => setSelectedCity(city.name)}
+                >
+                  {city.name}
+                </a>
+              );
+            })
+          ) : (
+            <p>No city found</p>
+          )}
         </div>
       </div>
     );
@@ -51,6 +61,7 @@ const AutoComplete: FC = () => {
   const renderInput = () => {
     return (
       <div className="container">
+        <h2>Selected City: {selectedCity}</h2>
         <div className={cities.length > 0 ? "dropdown is-active" : "dropdown"}>
           <div className="dropdown-trigger">
             <div className="field">
