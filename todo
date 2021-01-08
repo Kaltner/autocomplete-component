@@ -1,9 +1,18 @@
 Objective:
-    ☐ Create an autocomplete input
-    ☐ That uses the Bulma template
-    ☐ That makes an HTTP request to a mockup json
-    ☐ Queries the user input to that HTTP input
+    ✔ Create an autocomplete input @done(21-01-07 10:00)
+    ✔ That uses the Bulma template @done(21-01-07 10:00)
+    ✔ That makes an HTTP request to a mockup json @done(21-01-07 10:00)
+    ✔ Queries the user input to that HTTP input @done(21-01-07 10:00)
     ☐ Have a loading state
-    ☐ Have a empty list state
-    ☐ Loads up the list from the query
+    ☐ Have a not found list state
+    ✔ Loads up the list from the query @done(21-01-07 10:00)
     ☐ With a debounce of 500ms
+    ☐ Starting empty state
+
+React Component:
+    App
+        AutoComplete
+            Input
+            Helper
+            Autocomplete list
+            Debouncer Module
