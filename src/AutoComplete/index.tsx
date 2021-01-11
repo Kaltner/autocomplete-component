@@ -58,31 +58,27 @@ const AutoComplete: FC = () => {
     );
   };
 
-  const renderInput = () => {
-    return (
-      <div className="container">
-        <h2>Selected City: {selectedCity}</h2>
-        <div className={cities.length > 0 ? "dropdown is-active" : "dropdown"}>
-          <div className="dropdown-trigger">
-            <div className="field">
-              <label className="label">Name</label>
-              <div className="control">
-                <input
-                  className="input"
-                  type="text"
-                  placeholder="Find a city!"
-                  onChange={(e) => debounce.callback(e.target.value)}
-                />
-              </div>
+  return (
+    <div className="container">
+      <h2>Selected City: {selectedCity}</h2>
+      <div className={cities.length > 0 ? "dropdown is-active" : "dropdown"}>
+        <div className="dropdown-trigger">
+          <div className="field">
+            <label className="label">Name</label>
+            <div className="control">
+              <input
+                className="input"
+                type="text"
+                placeholder="Find a city!"
+                onChange={(e) => debounce.callback(e.target.value)}
+              />
             </div>
           </div>
-          {renderCitiesFound()}
         </div>
+        {renderCitiesFound()}
       </div>
-    );
-  };
-
-  return renderInput();
+    </div>
+  );
 };
 
 export default AutoComplete;
