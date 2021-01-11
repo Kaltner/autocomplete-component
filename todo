@@ -6,13 +6,12 @@ Objective:
     ☐ Have a loading state
     ☐ Have a not found list state
     ✔ Loads up the list from the query @done(21-01-07 10:00)
-    ☐ With a debounce of 500ms
+    ✔ With a debounce of 500ms @done(21-01-11 08:43)
     ☐ Starting empty state
 
-React Component:
-    App
-        AutoComplete
-            Input
-            Helper
-            Autocomplete list
-            Debouncer Module
+Improvement tasks:
+    ☐ Pass the API call for the cities a Prompt.
+    ☐ Make the debounce time a prompt
+    ☐ Change the name from cities calls to a more generic name
+    ☐ Return the HTML code, not a function (Readibility)
+    ☐ Make the Component less opiniated
